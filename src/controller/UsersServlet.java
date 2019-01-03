@@ -20,52 +20,52 @@ public class UsersServlet extends HttpServlet {
 
 	UsersDAO usersDAO = new UsersDAO();
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-    }
+	}
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        String command = request.getParameter("command");
-        String url = "";
-        Users users = new Users();
-        HttpSession session = request.getSession();
-        switch (command) {
-            case "insert":
-                users.setUserID(new java.util.Date().getTime());
-                users.setUserEmail(request.getParameter("email"));
-                users.setUserPass(request.getParameter("pass"));
-                users.setUserRole(false);
-                if(usersDAO.checkEmail(request.getParameter("email"))!=true){
-                    usersDAO.insertUser(users);
-                    session.setAttribute("user", users);
-                    url = "/index.jsp";
-                }
-                else
-                {
-                    request.setAttribute("error", "Email da ton tai!");
-                    url = "/login.jsp";
-                }
+		String command = request.getParameter("command");
+		String url = "";
+		Users users = new Users();
+		HttpSession session = request.getSession();
+		switch (command) {
+		case "insert":
+			users.setUserID(new java.util.Date().getTime());
+			users.setUserEmail(request.getParameter("email"));
+			users.setUserPass(request.getParameter("pass"));
+			users.setUserRole(false);
+			if(usersDAO.checkEmail(request.getParameter("email"))!=true){
+				usersDAO.insertUser(users);
+				session.setAttribute("user", users);
+				url = "/index.jsp";
+			}
+			else
+			{
+				request.setAttribute("error", "Email da ton tai!");
+				url = "/login.jsp";
+			}
 
-                break;
-            case "login":
-                users = usersDAO.login(request.getParameter("emaill"), (request.getParameter("passl")));
-                if (users != null) {
-                    session.setAttribute("user", users);
-                    url = "/index.jsp";
-                }else{
-                    request.setAttribute("error", "Error email or password!");
-                    url = "/login.jsp";
-                }
-                break;
-        }
-        RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
-        rd.forward(request, response);
+			break;
+		case "login":
+			users = usersDAO.login(request.getParameter("emaill"), (request.getParameter("passl")));
+			if (users != null) {
+				session.setAttribute("user", users);
+				url = "/index.jsp";
+			}else{
+				request.setAttribute("error", "Error email or password!");
+				url = "/login.jsp";
+			}
+			break;
+		}
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+		rd.forward(request, response);
 
-    }
+	}
 
 }

@@ -13,10 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Product;
 
-/**
- *
- * @author TUNGDUONG
- */
+
 public class ProductDAO {
 
 	// get danh sách sản phẩm dựa vào mã danh mục

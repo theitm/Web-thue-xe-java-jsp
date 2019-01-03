@@ -42,8 +42,9 @@
 
 					</span>
 					<p>
-						<b>Giới thiệu: </b><%=product.getProductDescription()%></p><br><br>
-					<a
+						<b>Giới thiệu: </b><%=product.getProductDescription()%></p>
+					<br>
+					<br> <a
 						href="CartServlet?command=plus&productID=<%=product.getProductID()%>">
 						<button type="button" class="btn btn-fefault cart">
 							<i class="fa fa-shopping-cart"></i> Thêm vào giỏ

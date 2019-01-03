@@ -5,77 +5,73 @@
  */
 package model;
 
-/**
- *
- * @author TUNGDUONG
- */
 public class Product {
 
-    private long productID;
-    private long categoryID;
-    private String productName;
-    private String productImage;
-    private double productPrice;
-    private String productDescription;
+	private long productID;
+	private long categoryID;
+	private String productName;
+	private String productImage;
+	private double productPrice;
+	private String productDescription;
 
-    public Product() {
-    }
+	public Product() {
+	}
 
-    public Product(long productID, long categoryID, String productName, String productImage, double productPrice, String productDescription) {
-        this.productID = productID;
-        this.categoryID = categoryID;
-        this.productName = productName;
-        this.productImage = productImage;
-        this.productPrice = productPrice;
-        this.productDescription = productDescription;
-    }
+	public Product(long productID, long categoryID, String productName, String productImage, double productPrice, String productDescription) {
+		this.productID = productID;
+		this.categoryID = categoryID;
+		this.productName = productName;
+		this.productImage = productImage;
+		this.productPrice = productPrice;
+		this.productDescription = productDescription;
+	}
 
-    public long getProductID() {
-        return productID;
-    }
+	public long getProductID() {
+		return productID;
+	}
 
-    public void setProductID(long productID) {
-        this.productID = productID;
-    }
+	public void setProductID(long productID) {
+		this.productID = productID;
+	}
 
-    public long getCategoryID() {
-        return categoryID;
-    }
+	public long getCategoryID() {
+		return categoryID;
+	}
 
-    public void setCategoryID(long categoryID) {
-        this.categoryID = categoryID;
-    }
+	public void setCategoryID(long categoryID) {
+		this.categoryID = categoryID;
+	}
 
-    public String getProductName() {
-        return productName;
-    }
+	public String getProductName() {
+		return productName;
+	}
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 
-    public String getProductImage() {
-        return productImage;
-    }
+	public String getProductImage() {
+		return productImage;
+	}
 
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
-    }
+	public void setProductImage(String productImage) {
+		this.productImage = productImage;
+	}
 
-    public double getProductPrice() {
-        return productPrice;
-    }
+	public double getProductPrice() {
+		return productPrice;
+	}
 
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
+	public void setProductPrice(double productPrice) {
+		this.productPrice = productPrice;
+	}
 
-    public String getProductDescription() {
-        return productDescription;
-    }
+	public String getProductDescription() {
+		return productDescription;
+	}
 
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
 
 }

@@ -25,17 +25,17 @@
 <!--/head-->
 <body>
 	<%
-  CategoryDAO categoryDAO = new CategoryDAO();
-	Users users = new Users();
-	if (session.getAttribute("user") != null) {
-	    users = (Users) session.getAttribute("user");
-	}
- 	Cart cart = (Cart) session.getAttribute("cart");
-	if (cart == null) {
-    cart = new Cart();
-    session.setAttribute("cart", cart); 
-	}
-%>
+		CategoryDAO categoryDAO = new CategoryDAO();
+		Users users = new Users();
+		if (session.getAttribute("user") != null) {
+			users = (Users) session.getAttribute("user");
+		}
+		Cart cart = (Cart) session.getAttribute("cart");
+		if (cart == null) {
+			cart = new Cart();
+			session.setAttribute("cart", cart);
+		}
+	%>
 	<header id="header">
 		<!--header-->
 		<div class="header_top">
@@ -74,20 +74,30 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<%if(users != null){ %>
-								<li><a href="#"><i class="fa fa-user"></i><%=users.getUserEmail() %></a></li>
-								<%}%>
+								<%
+									if (users != null) {
+								%>
+								<li><a href="#"><i class="fa fa-user"></i><%=users.getUserEmail()%></a></li>
+								<%
+									}
+								%>
 								<li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i>
-										Cart(<%=cart.countItem() %>)</a></li>
-								<%if(users == null){ %>
+										Cart(<%=cart.countItem()%>)</a></li>
+								<%
+									if (users == null) {
+								%>
 								<li><a href="login.jsp"><i class="fa fa-lock"></i>
 										Login</a></li>
-								<%} else {%>
+								<%
+									} else {
+								%>
 
 								<li><a href="login.jsp"><i class="fa fa-sign-out"></i>
 										Thoat</a></li>
 
-								<% } %>
+								<%
+									}
+								%>
 							</ul>
 						</div>
 					</div>
@@ -115,12 +125,14 @@
 										class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
 										<%
-                                    	for (Category c : categoryDAO.getListCategory()) {
-                                    %>
+											for (Category c : categoryDAO.getListCategory()) {
+										%>
 										<li><a
 											href="products.jsp?category=<%=c.getCategoryID()%>"> <%=c.getCategoryName()%>
 										</a></li>
-										<%}%>
+										<%
+											}
+										%>
 									</ul></li>
 								<li><a href="contact.jsp">Liên hệ</a></li>
 							</ul>

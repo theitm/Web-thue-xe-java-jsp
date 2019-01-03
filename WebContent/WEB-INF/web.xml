@@ -8,7 +8,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-     <servlet>
+      <servlet>
         <servlet-name>CheckEmailServlet</servlet-name>
         <servlet-class>controller.CheckEmailServlet</servlet-class>
     </servlet>
@@ -23,6 +23,10 @@
     <servlet>
         <servlet-name>CheckOutServlet</servlet-name>
         <servlet-class>controller.CheckOutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManagerCategoryServlet</servlet-name>
+        <servlet-class>controller.ManagerCategoryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CheckEmailServlet</servlet-name>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>CheckOutServlet</servlet-name>
         <url-pattern>/CheckOutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagerCategoryServlet</servlet-name>
+        <url-pattern>/ManagerCategoryServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
